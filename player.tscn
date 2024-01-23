@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7qkk6vulw62u"]
+
+[ext_resource type="Texture2D" uid="uid://ca7ikb44oucdw" path="res://PPcompress.png" id="1_jovv7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v725"]
+size = Vector2(2012, 1993)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jovv7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 0.5)
+shape = SubResource("RectangleShape2D_7v725")
