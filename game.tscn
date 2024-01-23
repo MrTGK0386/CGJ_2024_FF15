@@ -18,3 +18,4 @@ offset_bottom = 1080.0
 position = Vector2(1001, -128)
 
 [node name="player" parent="." instance=ExtResource("2_8hj54")]
+scale = Vector2(0.2, 0.2)
