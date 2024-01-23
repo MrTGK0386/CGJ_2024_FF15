@@ -27,6 +27,19 @@ func player_movement(delta):
 		velocity = velocity.limit_length(max_speed)
 		
 	move_and_slide()
-		
-		
+
+func _on_tgk_gen_colider_area_entered(area):
+	if area.name == "RectBas" :
+		print("entered ",area.name)
 	
+	if area.name == "RectHaut" :
+		print("entered ",area.name)
+	
+	if area.name == "RectGauche" :
+		print("entered ",area.name)
+	
+	if area.name == "RectDroit" :
+		print("entered ",area.name)
+	
+func _on_tgk_gen_colider_area_exited(area):
+	print("exited ", area.name)
