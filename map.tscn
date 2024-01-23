@@ -6,17 +6,177 @@
 script/source = "extends Node2D
 
 var mapNumber = 0
+var direction = 8
+var mapQueue = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	mapNumber += 1
+	mapQueue.append(\"Map %s\" %mapNumber)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	for n in mapQueue.size():
+		print(mapQueue[n])
 	
-#func generateTerrain():
+# This function generate a new Tile
+func TGK_genTile(direction):
+	print(\"entered function genTile\")
+	if direction == 0:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		add_child(newTile)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(0,-6000)
+	if direction == 2:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		add_child(newTile)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(6000,0)
+	if direction == 4:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		add_child(newTile)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(0,6000)
+	if direction == 6:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		add_child(newTile)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(-6000,0)
+	if direction == 1:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		var newTile2 = currentTile.duplicate()
+		var newTile3 = currentTile.duplicate()
+		add_child(newTile)
+		add_child(newTile2)
+		add_child(newTile3)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile2.name = \"Map%s\" %mapNumber
+		newTile3.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(0,-6000)
+		newTile2.position = Vector2(6000,0)
+		newTile3.position = Vector2(6000,-6000)
+	if direction == 3:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		var newTile2 = currentTile.duplicate()
+		var newTile3 = currentTile.duplicate()
+		add_child(newTile)
+		add_child(newTile2)
+		add_child(newTile3)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile2.name = \"Map%s\" %mapNumber
+		newTile3.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(0,6000)
+		newTile2.position = Vector2(6000,0)
+		newTile3.position = Vector2(6000,6000)
+	if direction == 5:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		var newTile2 = currentTile.duplicate()
+		var newTile3 = currentTile.duplicate()
+		add_child(newTile)
+		add_child(newTile2)
+		add_child(newTile3)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile2.name = \"Map%s\" %mapNumber
+		newTile3.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(0,6000)
+		newTile2.position = Vector2(-6000,0)
+		newTile3.position = Vector2(-6000,6000)
+	if direction == 7:
+		var currentTile = get_node(\".\")
+		var newTile = currentTile.duplicate()
+		var newTile2 = currentTile.duplicate()
+		var newTile3 = currentTile.duplicate()
+		add_child(newTile)
+		add_child(newTile2)
+		add_child(newTile3)
+		newTile.name = \"Map%s\" %mapNumber
+		newTile2.name = \"Map%s\" %mapNumber
+		newTile3.name = \"Map%s\" %mapNumber
+		newTile.position = Vector2(0,-6000)
+		newTile2.position = Vector2(-6000,0)
+		newTile3.position = Vector2(-6000,-6000)
+	print (\"genTile ended\")
+
+# Those 4 functions are called when the player colide with the map's borders
+func _on_rect_haut_area_entered(area):
+	print(\"entered \",area.name)
+	if direction != 0 && direction != 8:
+		if direction == 6:
+			direction = 7
+		if direction == 2:
+			direction = 1
+	elif direction == 4:
+		direction = 4
+	else:
+		direction = 0
+	print(direction)
+	TGK_genTile(direction)
+
+func _on_rect_droit_area_entered(area):
+	print(\"entered \",area.name)
+	if direction != 2 && direction != 8:
+		if direction == 0:
+			direction = 1
+		if direction == 4:
+			direction = 3
+	elif direction == 6:
+		direction = 6
+	else:
+		direction = 2
+	print(direction)
+	TGK_genTile(direction)
+
+func _on_rect_bas_area_entered(area):
+	print(\"entered \",area.name)
+	if direction != 4 && direction != 8:
+		if direction == 2:
+			direction = 3
+		if direction == 6:
+			direction = 5
+	elif direction == 0:
+		direction = 0
+	else:
+		direction = 4
+	print(direction)
+	TGK_genTile(direction)
+
+func _on_rect_gauche_area_entered(area):
+	print(\"entered \",area.name)
+	if direction != 6 && direction != 8:
+		if direction == 0:
+			direction = 7
+		if direction == 4:
+			direction = 5
+	elif direction == 2:
+		direction = 2
+	else:
+		direction = 6
+	print(direction)
+	TGK_genTile(direction)
+
+# Those 4 functions are called when the player exit the map's borders
+func _on_rect_haut_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 
+
+func _on_rect_droit_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 
+
+func _on_rect_bas_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 
+
+func _on_rect_gauche_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8d8x"]
@@ -34,18 +194,9 @@ texture_filter = 1
 texture_repeat = 1
 texture = ExtResource("1_kk5b4")
 
-[node name="RectBas" type="Area2D" parent="."]
-position = Vector2(2730, 0)
-collision_layer = 2
-collision_mask = 0
-
-[node name="rectBas" type="CollisionShape2D" parent="RectBas"]
-position = Vector2(-2730, 2730)
-shape = SubResource("RectangleShape2D_w8d8x")
-
 [node name="RectHaut" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 
 [node name="rectHaut" type="CollisionShape2D" parent="RectHaut"]
 position = Vector2(0, -2730)
@@ -53,16 +204,37 @@ shape = SubResource("RectangleShape2D_w8d8x")
 
 [node name="RectDroit" type="Area2D" parent="."]
 position = Vector2(2730, 0)
-collision_layer = 2
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 
 [node name="rectDroit" type="CollisionShape2D" parent="RectDroit"]
 shape = SubResource("RectangleShape2D_awolk")
 
+[node name="RectBas" type="Area2D" parent="."]
+position = Vector2(2730, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="rectBas" type="CollisionShape2D" parent="RectBas"]
+position = Vector2(-2730, 2730)
+shape = SubResource("RectangleShape2D_w8d8x")
+
 [node name="RectGauche" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 
 [node name="rectGauche" type="CollisionShape2D" parent="RectGauche"]
 position = Vector2(-2730, 0)
 shape = SubResource("RectangleShape2D_awolk")
+
+[node name="TGK_TimerDelay" type="Timer" parent="."]
+
+[connection signal="area_entered" from="RectHaut" to="." method="_on_rect_haut_area_entered"]
+[connection signal="area_exited" from="RectHaut" to="." method="_on_rect_haut_area_exited"]
+[connection signal="area_entered" from="RectDroit" to="." method="_on_rect_droit_area_entered"]
+[connection signal="area_exited" from="RectDroit" to="." method="_on_rect_droit_area_exited"]
+[connection signal="area_entered" from="RectBas" to="." method="_on_rect_bas_area_entered"]
+[connection signal="area_exited" from="RectBas" to="." method="_on_rect_bas_area_exited"]
+[connection signal="area_entered" from="RectGauche" to="." method="_on_rect_gauche_area_entered"]
+[connection signal="area_exited" from="RectGauche" to="." method="_on_rect_gauche_area_exited"]
+[connection signal="timeout" from="TGK_TimerDelay" to="." method="_on_tgk_timer_delay_timeout"]

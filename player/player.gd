@@ -6,6 +6,11 @@ const friction = 600
 
 var input = Vector2.ZERO
 
+@export var direction : int = 8
+
+func _ready():
+	pass
+
 func _physics_process(delta):
 	player_movement(delta)
 	
@@ -28,18 +33,34 @@ func player_movement(delta):
 		
 	move_and_slide()
 
-func _on_tgk_gen_colider_area_entered(area):
-	if area.name == "RectBas" :
-		print("entered ",area.name)
-	
-	if area.name == "RectHaut" :
-		print("entered ",area.name)
-	
-	if area.name == "RectGauche" :
-		print("entered ",area.name)
-	
-	if area.name == "RectDroit" :
-		print("entered ",area.name)
-	
-func _on_tgk_gen_colider_area_exited(area):
-	print("exited ", area.name)
+#@onready var nodeMap = get_node("%Map")
+#
+#func _on_tgk_gen_colider_area_entered(area):
+	#if area.name == "RectHaut" :
+		#print("entered ",area.name)
+		#direction = 0
+		#print(direction)
+		#TGK_genTile(direction)
+	#
+	#if area.name == "RectDroit" :
+		#print("entered ",area.name)
+		#direction = 2
+		#print(direction)
+		#TGK_genTile(direction)
+		#
+	#if area.name == "RectBas" :
+		#print("entered ",area.name)
+		#direction = 4
+		#print(direction)
+		#TGK_genTile(direction)
+	#
+	#if area.name == "RectGauche" :
+		#print("entered ",area.name)
+		#direction = 6
+		#print(direction)
+		#TGK_genTile(direction)
+	#
+#func _on_tgk_gen_colider_area_exited(area):
+	#print("exited ", area.name)
+	#direction = 8
+	#print(direction)

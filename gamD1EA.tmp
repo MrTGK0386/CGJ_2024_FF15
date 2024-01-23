@@ -7,7 +7,6 @@
 [node name="Game" type="Node"]
 
 [node name="Map" parent="." instance=ExtResource("1_ufv6e")]
-unique_name_in_owner = true
 
 [node name="Interface" type="Control" parent="."]
 layout_mode = 3
