@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7qkk6vulw62u"]
+[gd_scene load_steps=4 format=3 uid="uid://dajy6bp7e8fxa"]
 
 [ext_resource type="Texture2D" uid="uid://ca7ikb44oucdw" path="res://PPcompress.png" id="1_jovv7"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_xmky4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v725"]
 size = Vector2(2012, 1993)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+script = ExtResource("1_xmky4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jovv7")
