@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://h2ygpi0h6fcf"]
+[gd_scene load_steps=5 format=3 uid="uid://h2ygpi0h6fcf"]
 
 [ext_resource type="Script" path="res://genMap.gd" id="1_6k0yg"]
 [ext_resource type="Texture2D" uid="uid://ym1ivgyf08kd" path="res://6000x6000-px-ART-artistic-artwork-fantasy-fi-futuristic-sci-science-space-1667035.jpg" id="1_kk5b4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8d8x"]
+resource_local_to_scene = true
+size = Vector2(6000, 540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awolk"]
+size = Vector2(540, 6000)
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_6k0yg")
@@ -10,3 +17,23 @@ script = ExtResource("1_6k0yg")
 texture_filter = 1
 texture_repeat = 1
 texture = ExtResource("1_kk5b4")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="rectHaut" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2730)
+shape = SubResource("RectangleShape2D_w8d8x")
+
+[node name="rectBas" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2730)
+shape = SubResource("RectangleShape2D_w8d8x")
+
+[node name="rectGauche" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2730, 0)
+shape = SubResource("RectangleShape2D_awolk")
+
+[node name="rectGauche2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2730, 0)
+shape = SubResource("RectangleShape2D_awolk")
