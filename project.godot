@@ -14,3 +14,7 @@ config/name="Cgj 2024 Ff 15"
 run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=3

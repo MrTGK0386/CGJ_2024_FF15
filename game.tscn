@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cghunse7pvblm"]
+[gd_scene load_steps=3 format=3 uid="uid://dayjjdyuqxbvv"]
 
-[ext_resource type="PackedScene" uid="uid://h2ygpi0h6fcf" path="res://map.tscn" id="1_ufv6e"]
-[ext_resource type="PackedScene" uid="uid://b7qkk6vulw62u" path="res://player.tscn" id="2_8hj54"]
+[ext_resource type="PackedScene" path="res://map.tscn" id="1_ufv6e"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2_8hj54"]
 
 [node name="Game" type="Node"]
 
 [node name="Map" parent="." instance=ExtResource("1_ufv6e")]
+visible = false
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_8hj54")]
+visible = false
 scale = Vector2(0.25, 0.25)
 
 [node name="Ennemi" type="Node2D" parent="."]
+visible = false
+
+[node name="Interface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
