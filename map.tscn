@@ -1,11 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://h2ygpi0h6fcf"]
 
-[ext_resource type="Texture2D" uid="uid://5vqf62wp7jhb" path="res://icon.svg" id="1_r21dk"]
+[ext_resource type="Texture2D" uid="uid://ym1ivgyf08kd" path="res://6000x6000-px-ART-artistic-artwork-fantasy-fi-futuristic-sci-science-space-1667035.jpg" id="1_kk5b4"]
 
 [node name="Map" type="Node2D"]
 
 [node name="MapSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-scale = Vector2(20, 20)
-texture = ExtResource("1_r21dk")
+texture = ExtResource("1_kk5b4")
