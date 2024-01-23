@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm2sjs6nbhtka"]
+
+[ext_resource type="Texture2D" uid="uid://b0y2goq1agn0d" path="res://projectile/projectile_laser.png" id="1_4afqg"]
+
+[sub_resource type="GDScript" id="GDScript_xnebu"]
+script/source = "extends RigidBody2D
+
+@export var min_speed : int
+@export var max_speed : int
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_Visibility_screen_exited():
+	queue_free()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v2elk"]
+radius = 56.0
+height = 322.0
+
+[node name="Projectile" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_mask = 0
+gravity_scale = 0.0
+script = SubResource("GDScript_xnebu")
+min_speed = 20
+max_speed = 150
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_4afqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_v2elk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="RigidBody2D/CollisionShape2D"]
