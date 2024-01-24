@@ -33,6 +33,64 @@ func player_movement(delta):
 		
 	move_and_slide()
 
+# Those 4 functions are called when the player colide with the map's borders
+func _on_rect_haut_area_entered(area):
+	print("entered ",area.name)
+	if direction != 0 && direction != 8:
+		if direction == 6:
+			direction = 7
+		if direction == 2:
+			direction = 1
+	elif direction == 4:
+		direction = 4
+	else:
+		direction = 0
+	print(direction)
+	GameScript.TGK_genTile(direction)
+
+func _on_rect_droit_area_entered(area):
+	print("entered ",area.name)
+	if direction != 2 && direction != 8:
+		if direction == 0:
+			direction = 1
+		if direction == 4:
+			direction = 3
+	elif direction == 6:
+		direction = 6
+	else:
+		direction = 2
+	print(direction)
+	GameScript.TGK_genTile(direction)
+
+func _on_rect_bas_area_entered(area):
+	print("entered ",area.name)
+	if direction != 4 && direction != 8:
+		if direction == 2:
+			direction = 3
+		if direction == 6:
+			direction = 5
+	elif direction == 0:
+		direction = 0
+	else:
+		direction = 4
+	print(direction)
+	GameScript.TGK_genTile(direction)
+
+func _on_rect_gauche_area_entered(area):
+	print("entered ",area.name)
+	if direction != 6 && direction != 8:
+		if direction == 0:
+			direction = 7
+		if direction == 4:
+			direction = 5
+	elif direction == 2:
+		direction = 2
+	else:
+		direction = 6
+	print(direction)
+	GameScript.TGK_genTile(direction)
+
+
 #@onready var nodeMap = get_node("%Map")
 #
 #func _on_tgk_gen_colider_area_entered(area):
@@ -64,3 +122,20 @@ func player_movement(delta):
 	#print("exited ", area.name)
 	#direction = 8
 	#print(direction)
+
+# Those 4 functions are called when the player exit the map's borders
+func _on_rect_haut_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 
+
+func _on_rect_droit_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 
+
+func _on_rect_bas_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 
+
+func _on_rect_gauche_area_exited(area):
+	await get_tree().create_timer(1).timeout
+	direction = 8 

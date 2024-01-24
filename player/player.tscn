@@ -2,7 +2,101 @@
 
 [ext_resource type="Texture2D" uid="uid://ca7ikb44oucdw" path="res://PPcompress.png" id="1_jovv7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_xmky4"]
-[ext_resource type="Script" path="res://game.gd" id="3_5t5i0"]
+
+[sub_resource type="GDScript" id="GDScript_0mt1o"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+#func TGK_genTile(direction):
+	#if direction == 0:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#add_child(newTile)
+		#newTile.name = \"Map2\"
+		#newTile.position = Vector2(0,-6000)
+	#if direction == 2:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#add_child(newTile)
+		#newTile.name = \"Map2\"
+		#newTile.position = Vector2(6000,0)
+	#if direction == 4:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#add_child(newTile)
+		#newTile.name = \"Map2\"
+		#newTile.position = Vector2(0,6000)
+	#if direction == 6:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#add_child(newTile)
+		#newTile.name = \"Map2\"
+		#newTile.position = Vector2(-6000,0)
+	#if direction == 1:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#var newTile2 = currentTile.duplicate()
+		#var newTile3 = currentTile.duplicate()
+		#add_child(newTile)
+		#add_child(newTile2)
+		#add_child(newTile3)
+		#newTile.name = \"Map2\"
+		#newTile2.name = \"Map3\"
+		#newTile3.name = \"Map4\"
+		#newTile.position = Vector2(0,-6000)
+		#newTile2.position = Vector2(6000,0)
+		#newTile3.position = Vector2(6000,-6000)
+	#if direction == 3:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#var newTile2 = currentTile.duplicate()
+		#var newTile3 = currentTile.duplicate()
+		#add_child(newTile)
+		#add_child(newTile2)
+		#add_child(newTile3)
+		#newTile.name = \"Map2\"
+		#newTile2.name = \"Map3\"
+		#newTile3.name = \"Map4\"
+		#newTile.position = Vector2(0,6000)
+		#newTile2.position = Vector2(6000,0)
+		#newTile3.position = Vector2(6000,6000)
+	#if direction == 5:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#var newTile2 = currentTile.duplicate()
+		#var newTile3 = currentTile.duplicate()
+		#add_child(newTile)
+		#add_child(newTile2)
+		#add_child(newTile3)
+		#newTile.name = \"Map2\"
+		#newTile2.name = \"Map3\"
+		#newTile3.name = \"Map4\"
+		#newTile.position = Vector2(0,6000)
+		#newTile2.position = Vector2(-6000,0)
+		#newTile3.position = Vector2(-6000,6000)
+	#if direction == 7:
+		#var currentTile = get_node(\"Map\")
+		#var newTile = currentTile.duplicate()
+		#var newTile2 = currentTile.duplicate()
+		#var newTile3 = currentTile.duplicate()
+		#add_child(newTile)
+		#add_child(newTile2)
+		#add_child(newTile3)
+		#newTile.name = \"Map2\"
+		#newTile2.name = \"Map3\"
+		#newTile3.name = \"Map4\"
+		#newTile.position = Vector2(0,-6000)
+		#newTile2.position = Vector2(-6000,0)
+		#newTile3.position = Vector2(-6000,-6000)
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v725"]
 size = Vector2(399, 398)
@@ -17,9 +111,9 @@ texture = ExtResource("1_jovv7")
 
 [node name="tgk_gen_colider" type="Area2D" parent="."]
 position = Vector2(-0.5, 0)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("3_5t5i0")
+collision_layer = 0
+collision_mask = 2
+script = SubResource("GDScript_0mt1o")
 
 [node name="hitbox_perso" type="CollisionShape2D" parent="tgk_gen_colider"]
 shape = SubResource("RectangleShape2D_7v725")
