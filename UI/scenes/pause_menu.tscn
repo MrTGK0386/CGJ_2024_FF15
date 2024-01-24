@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://chkp1vujedrs4"]
 
 [ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="1_3s6rt"]
-[ext_resource type="Texture2D" uid="uid://42hrghcjcgum" path="res://UI/assets/buttons/jouer_final.svg" id="2_06woh"]
+[ext_resource type="Texture2D" uid="uid://c0r1suhd1q715" path="res://UI/assets/buttons/bouton_reprendre.svg" id="2_l2a62"]
 [ext_resource type="Texture2D" uid="uid://c2yidyqsosxqg" path="res://UI/assets/buttons/quitter_bouton.svg" id="3_ncbph"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn635"]
@@ -57,9 +57,9 @@ size_flags_horizontal = 4
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel"]
 layout_mode = 2
 anchor_right = 0.3
-offset_left = -231.0
+offset_left = -288.21
 offset_top = -6.5
-offset_right = 1409.0
+offset_right = 1639.79
 offset_bottom = 582.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -68,7 +68,7 @@ alignment = 1
 
 [node name="Button" type="Button" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
-icon = ExtResource("2_06woh")
+icon = ExtResource("2_l2a62")
 flat = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel"]
