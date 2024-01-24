@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bahav5fwi6tgd"]
+
+[ext_resource type="Script" path="res://projectile/laser_proj.gd" id="1_5l6df"]
+[ext_resource type="Texture2D" uid="uid://b0y2goq1agn0d" path="res://projectile/projectile_laser.png" id="1_fmskr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_00u78"]
+radius = 56.0
+height = 322.0
+
+[node name="laser_proj" type="Area2D" groups=["attack"]]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_5l6df")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fmskr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_00u78")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="shoot_snd" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
