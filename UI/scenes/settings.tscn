@@ -48,6 +48,7 @@ metadata/_edit_horizontal_guides_ = [149.0]
 
 [node name="SelectedSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_po2tp")
+volume_db = 5.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

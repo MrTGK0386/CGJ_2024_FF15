@@ -93,7 +93,7 @@ metadata/_edit_vertical_guides_ = [960.0]
 
 [node name="SelectedSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_1thy8")
-volume_db = -5.0
+volume_db = 5.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
