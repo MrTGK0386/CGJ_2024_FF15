@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fhkonnev5biw"]
+[gd_scene load_steps=15 format=3 uid="uid://fhkonnev5biw"]
 
 [ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="1_7sgih"]
 [ext_resource type="Script" path="res://UI/scripts/settings.gd" id="1_64fng"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://03anxhg1vxad" path="res://UI/assets/G_sound/selected_sound.mp3" id="2_hj2h2"]
 [ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="5_a8g5r"]
 [ext_resource type="PackedScene" uid="uid://c8xqpu5subu1k" path="res://UI/dependencies/Master_h_slider.tscn" id="6_bnlvt"]
+[ext_resource type="PackedScene" uid="uid://cbken2axcncdg" path="res://UI/dependencies/display_settings.tscn" id="7_2r2m8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ogwm1"]
 content_margin_left = 4.0
@@ -24,6 +25,14 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ogbw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fp1kt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjeeo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpd1u"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -98,7 +107,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("5_a8g5r")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Volume" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 750.0
 offset_top = 242.745
@@ -106,8 +115,50 @@ offset_right = 1164.0
 offset_bottom = 348.745
 alignment = 1
 
-[node name="HSlider" parent="VBoxContainer" instance=ExtResource("6_bnlvt")]
+[node name="HSlider" parent="Volume" instance=ExtResource("6_bnlvt")]
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.5
+offset_top = -77.025
+offset_right = 131.5
+offset_bottom = -77.025
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_7sgih")
+theme_override_font_sizes/font_size = 50
+text = "Plein écran"
+
+[node name="CheckButton" parent="." instance=ExtResource("7_2r2m8")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -54.0
+offset_right = -24.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2ogbw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fp1kt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_pjeeo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kpd1u")
 
 [connection signal="mouse_entered" from="ExitButton/ExitButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton/ExitButton" to="." method="_on_exit_button_mouse_exited"]

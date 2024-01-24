@@ -50,6 +50,8 @@ func _on_parameters_button_mouse_entered():
 func _on_parameters_button_mouse_exited():
 	Selector3_text.text = str("")
 	Selector4_text.text = str("")
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 
 
 
@@ -61,6 +63,8 @@ func _on_credits_button_mouse_entered():
 func _on_credits_button_mouse_exited():
 	Selector5_text.text = str("")
 	Selector6_text.text = str("")
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 
 
 func _on_exit_button_mouse_entered():
@@ -71,6 +75,8 @@ func _on_exit_button_mouse_entered():
 func _on_exit_button_mouse_exited():
 	Selector7_text.text = str("")
 	Selector8_text.text = str("")
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 
 
 func _on_play_button_focus_entered():
@@ -79,6 +85,8 @@ func _on_play_button_focus_entered():
 	$SelectedSound.play()
 	
 func _on_play_button_focus_exited():
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 	Selector1_text.text = str("")
 	Selector2_text.text = str("")
 
@@ -91,6 +99,8 @@ func _on_parameters_button_focus_entered():
 func _on_parameters_button_focus_exited():
 	Selector3_text.text = str("")
 	Selector4_text.text = str("")
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 
 
 func _on_credits_button_focus_entered():
@@ -101,6 +111,8 @@ func _on_credits_button_focus_entered():
 func _on_credits_button_focus_exited():
 	Selector5_text.text = str("")
 	Selector6_text.text = str("")
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 	
 
 func _on_exit_button_focus_entered():
@@ -111,10 +123,14 @@ func _on_exit_button_focus_entered():
 func _on_exit_button_focus_exited():
 	Selector7_text.text = str("")
 	Selector8_text.text = str("")
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 
 func _on_color_rect_focus_entered():
 	Selector7_text.text = str("")
 	Selector8_text.text = str("")
+	Selector1_text.text = str("")
+	Selector2_text.text = str("")
 
 
 
