@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnauthmjy2ihh"]
+
+[ext_resource type="Script" path="res://UI/input_settings/scripts/input_settings.gd" id="1_ryeon"]
+[ext_resource type="PackedScene" uid="uid://cqy65v65bcjl1" path="res://UI/input_settings/input_button.tscn" id="2_r8glk"]
+[ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="3_vir2q"]
+
+[node name="InputSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ryeon")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -565.0
+offset_top = -391.0
+offset_right = 565.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputButton" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("2_r8glk")]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vir2q")
+theme_override_font_sizes/font_size = 30
+text = "Réitnitialiser les touches"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

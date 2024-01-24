@@ -1,0 +1,284 @@
+[gd_scene load_steps=19 format=3 uid="uid://bci8ku2676asg"]
+
+[ext_resource type="Texture2D" uid="uid://bcww2ifww7gpj" path="res://UI/assets/logo/logo-pixidia.svg" id="1_cm8lf"]
+[ext_resource type="Script" path="res://UI/scripts/G_main.gd" id="1_dy2gd"]
+[ext_resource type="AudioStream" uid="uid://03anxhg1vxad" path="res://UI/assets/G_sound/selected_sound.mp3" id="2_bsihq"]
+[ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="2_sfun3"]
+[ext_resource type="Texture2D" uid="uid://cgblx1o3xfieq" path="res://UI/assets/buttons/btn-menu.svg" id="3_8vodp"]
+[ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="4_80rda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gf8ek"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpc70"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_11kcb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jgcd3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ag546"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lk87e"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dy1my"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c86j8"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82qwd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpc5o"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jig4t"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_55rd6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dy2gd")
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="SelectedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bsihq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.945098, 0.560784, 0.729412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 80.0
+offset_right = 2660.0
+offset_bottom = 1472.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_cm8lf")
+
+[node name="PlayButton" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 530.0
+offset_right = 2938.0
+offset_bottom = 1120.0
+scale = Vector2(0.3, 0.3)
+alignment = 1
+
+[node name="Selector1" type="Label" parent="PlayButton"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="PlayButton"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../PrametersButton/ParametersButton")
+focus_next = NodePath("../../PrametersButton/ParametersButton")
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 300
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gf8ek")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lpc70")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_11kcb")
+icon = ExtResource("3_8vodp")
+flat = true
+clip_text = true
+
+[node name="Selector2" type="Label" parent="PlayButton"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[node name="PrametersButton" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 704.0
+offset_right = 2938.0
+offset_bottom = 1199.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(147, 0)
+alignment = 1
+
+[node name="Selector3" type="Label" parent="PrametersButton"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[node name="ParametersButton" type="Button" parent="PrametersButton"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../../PlayButton/PlayButton")
+focus_neighbor_bottom = NodePath("../../CreditsButton/CreditsButton")
+focus_next = NodePath("../../CreditsButton/CreditsButton")
+focus_previous = NodePath("../../PlayButton/PlayButton")
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 300
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jgcd3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ag546")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lk87e")
+icon = ExtResource("4_80rda")
+flat = true
+clip_text = true
+
+[node name="Selector4" type="Label" parent="PrametersButton"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[node name="CreditsButton" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 723.0
+offset_right = 2938.0
+offset_bottom = 1218.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(147, 97.96)
+alignment = 1
+
+[node name="Selector5" type="Label" parent="CreditsButton"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[node name="CreditsButton" type="Button" parent="CreditsButton"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../PrametersButton/ParametersButton")
+focus_neighbor_bottom = NodePath("../../ExitButton2/ExitButton")
+focus_next = NodePath("../../PrametersButton/ParametersButton")
+focus_previous = NodePath("../../ExitButton2/ExitButton")
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 300
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dy1my")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_c86j8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_82qwd")
+icon = ExtResource("4_80rda")
+flat = true
+clip_text = true
+
+[node name="Selector6" type="Label" parent="CreditsButton"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[node name="ExitButton2" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 723.0
+offset_right = 2938.0
+offset_bottom = 1218.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(147, 289.775)
+alignment = 1
+
+[node name="Selector7" type="Label" parent="ExitButton2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[node name="ExitButton" type="Button" parent="ExitButton2"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../CreditsButton/CreditsButton")
+focus_previous = NodePath("../../CreditsButton/CreditsButton")
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 300
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dpc5o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jig4t")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_55rd6")
+icon = ExtResource("4_80rda")
+flat = true
+clip_text = true
+
+[node name="Selector8" type="Label" parent="ExitButton2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sfun3")
+theme_override_font_sizes/font_size = 400
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="ColorRect" to="." method="_on_color_rect_mouse_entered"]
+[connection signal="focus_entered" from="PlayButton/PlayButton" to="." method="_on_play_button_focus_entered"]
+[connection signal="focus_exited" from="PlayButton/PlayButton" to="." method="_on_play_button_focus_exited"]
+[connection signal="mouse_entered" from="PlayButton/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="mouse_exited" from="PlayButton/PlayButton" to="." method="_on_play_button_mouse_exited"]
+[connection signal="pressed" from="PlayButton/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="focus_entered" from="PrametersButton/ParametersButton" to="." method="_on_parameters_button_focus_entered"]
+[connection signal="focus_exited" from="PrametersButton/ParametersButton" to="." method="_on_parameters_button_focus_exited"]
+[connection signal="mouse_entered" from="PrametersButton/ParametersButton" to="." method="_on_parameters_button_mouse_entered"]
+[connection signal="mouse_exited" from="PrametersButton/ParametersButton" to="." method="_on_parameters_button_mouse_exited"]
+[connection signal="pressed" from="PrametersButton/ParametersButton" to="." method="_on_parameters_button_pressed"]
+[connection signal="focus_entered" from="CreditsButton/CreditsButton" to="." method="_on_credits_button_focus_entered"]
+[connection signal="focus_exited" from="CreditsButton/CreditsButton" to="." method="_on_credits_button_focus_exited"]
+[connection signal="mouse_entered" from="CreditsButton/CreditsButton" to="." method="_on_credits_button_mouse_entered"]
+[connection signal="mouse_exited" from="CreditsButton/CreditsButton" to="." method="_on_credits_button_mouse_exited"]
+[connection signal="focus_entered" from="ExitButton2/ExitButton" to="." method="_on_exit_button_focus_entered"]
+[connection signal="focus_exited" from="ExitButton2/ExitButton" to="." method="_on_exit_button_focus_exited"]
+[connection signal="mouse_entered" from="ExitButton2/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="ExitButton2/ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="ExitButton2/ExitButton" to="." method="_on_exit_button_pressed"]
