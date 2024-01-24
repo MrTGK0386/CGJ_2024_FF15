@@ -14,7 +14,7 @@ enemy_spawn_delay = 1
 
 [node name="EnnemySpawner" type="Node2D"]
 script = ExtResource("1_lvonu")
-spawns = Array[Resource]([SubResource("Resource_1y6tc")])
+spawns = Array[ExtResource("3_pq258")]([SubResource("Resource_1y6tc")])
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
