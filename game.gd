@@ -13,38 +13,34 @@ func _ready():
 func _process(delta):
 	if mapQueue.size() > 4:
 		remove_child(mapQueue.pop_back())
-	for n in mapQueue.size():
-		print(mapQueue[n])
+	#for n in mapQueue.size():
+		#print(mapQueue[n])
 
 # This function generate a new Tile
-func TGK_genTile(direction):
+func TGK_genTile(direction,currentMap):
 	print("entered function genTile")
+	var currentTile = get_node(currentMap)
 	if direction == 0:
-		var currentTile = get_node("Map0")
 		var newTile = currentTile.duplicate()
 		add_child(newTile)
 		newTile.name = "Map%s" %mapNumber
 		newTile.position = Vector2(0,-6000)
 	if direction == 2:
-		var currentTile = get_node(".")
 		var newTile = currentTile.duplicate()
 		add_child(newTile)
 		newTile.name = "Map%s" %mapNumber
 		newTile.position = Vector2(6000,0)
 	if direction == 4:
-		var currentTile = get_node(".")
 		var newTile = currentTile.duplicate()
 		add_child(newTile)
 		newTile.name = "Map%s" %mapNumber
 		newTile.position = Vector2(0,6000)
 	if direction == 6:
-		var currentTile = get_node(".")
 		var newTile = currentTile.duplicate()
 		add_child(newTile)
 		newTile.name = "Map%s" %mapNumber
 		newTile.position = Vector2(-6000,0)
 	if direction == 1:
-		var currentTile = get_node(".")
 		var newTile = currentTile.duplicate()
 		var newTile2 = currentTile.duplicate()
 		var newTile3 = currentTile.duplicate()
@@ -58,7 +54,6 @@ func TGK_genTile(direction):
 		newTile2.position = Vector2(6000,0)
 		newTile3.position = Vector2(6000,-6000)
 	if direction == 3:
-		var currentTile = get_node(".")
 		var newTile = currentTile.duplicate()
 		var newTile2 = currentTile.duplicate()
 		var newTile3 = currentTile.duplicate()
@@ -72,7 +67,6 @@ func TGK_genTile(direction):
 		newTile2.position = Vector2(6000,0)
 		newTile3.position = Vector2(6000,6000)
 	if direction == 5:
-		var currentTile = get_node(".")
 		var newTile = currentTile.duplicate()
 		var newTile2 = currentTile.duplicate()
 		var newTile3 = currentTile.duplicate()
@@ -86,7 +80,6 @@ func TGK_genTile(direction):
 		newTile2.position = Vector2(-6000,0)
 		newTile3.position = Vector2(-6000,6000)
 	if direction == 7:
-		var currentTile = get_node(".")
 		var newTile = currentTile.duplicate()
 		var newTile2 = currentTile.duplicate()
 		var newTile3 = currentTile.duplicate()

@@ -7,7 +7,7 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GameScript.mapQueue.append(get_node(\".\"))
+	GameScript.mapQueue.append(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -61,12 +61,3 @@ collision_mask = 0
 [node name="rectGauche" type="CollisionShape2D" parent="RectGauche"]
 position = Vector2(-2730, 0)
 shape = SubResource("RectangleShape2D_awolk")
-
-[connection signal="area_entered" from="RectHaut" to="." method="_on_rect_haut_area_entered"]
-[connection signal="area_exited" from="RectHaut" to="." method="_on_rect_haut_area_exited"]
-[connection signal="area_entered" from="RectDroit" to="." method="_on_rect_droit_area_entered"]
-[connection signal="area_exited" from="RectDroit" to="." method="_on_rect_droit_area_exited"]
-[connection signal="area_entered" from="RectBas" to="." method="_on_rect_bas_area_entered"]
-[connection signal="area_exited" from="RectBas" to="." method="_on_rect_bas_area_exited"]
-[connection signal="area_entered" from="RectGauche" to="." method="_on_rect_gauche_area_entered"]
-[connection signal="area_exited" from="RectGauche" to="." method="_on_rect_gauche_area_exited"]
