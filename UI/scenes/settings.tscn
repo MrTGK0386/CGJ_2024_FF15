@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://fhkonnev5biw"]
+[gd_scene load_steps=15 format=3 uid="uid://fhkonnev5biw"]
 
 [ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="1_7sgih"]
 [ext_resource type="Script" path="res://UI/scripts/settings.gd" id="1_64fng"]
 [ext_resource type="Texture2D" uid="uid://cgblx1o3xfieq" path="res://UI/assets/buttons/btn-menu.svg" id="2_5l5ro"]
-[ext_resource type="AudioStream" uid="uid://03anxhg1vxad" path="res://UI/assets/G_sound/selected_sound.mp3" id="2_hj2h2"]
 [ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="5_a8g5r"]
 [ext_resource type="PackedScene" uid="uid://c8xqpu5subu1k" path="res://UI/dependencies/Master_h_slider.tscn" id="6_bnlvt"]
 [ext_resource type="PackedScene" uid="uid://cbken2axcncdg" path="res://UI/dependencies/display_settings.tscn" id="7_2r2m8"]
@@ -47,7 +46,6 @@ metadata/_edit_vertical_guides_ = [959.0]
 metadata/_edit_horizontal_guides_ = [149.0]
 
 [node name="SelectedSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_hj2h2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

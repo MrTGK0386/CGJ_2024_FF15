@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://chkp1vujedrs4"]
+[gd_scene load_steps=5 format=3 uid="uid://chkp1vujedrs4"]
 
 [ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="1_3s6rt"]
+[ext_resource type="Texture2D" uid="uid://cgblx1o3xfieq" path="res://UI/assets/buttons/btn-menu.svg" id="2_4i015"]
 [ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="2_b3ef8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn635"]
@@ -67,7 +68,7 @@ alignment = 1
 
 [node name="Button" type="Button" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel/HBoxContainer"]
 layout_mode = 2
-icon = ExtResource("2_b3ef8")
+icon = ExtResource("2_4i015")
 flat = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel"]

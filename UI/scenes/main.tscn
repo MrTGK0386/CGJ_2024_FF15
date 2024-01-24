@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcww2ifww7gpj" path="res://UI/assets/logo/logo-pixidia.svg" id="1_cm8lf"]
 [ext_resource type="Script" path="res://UI/scripts/G_main.gd" id="1_dy2gd"]
-[ext_resource type="AudioStream" uid="uid://03anxhg1vxad" path="res://UI/assets/G_sound/selected_sound.mp3" id="2_bsihq"]
+[ext_resource type="AudioStream" uid="uid://deixctpqw0nr" path="res://UI/assets/G_sound/selected_sound.mp3" id="2_1thy8"]
 [ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="2_sfun3"]
 [ext_resource type="Texture2D" uid="uid://cgblx1o3xfieq" path="res://UI/assets/buttons/btn-menu.svg" id="3_8vodp"]
 [ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="4_80rda"]
@@ -90,7 +90,8 @@ script = ExtResource("1_dy2gd")
 metadata/_edit_vertical_guides_ = [960.0]
 
 [node name="SelectedSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_bsihq")
+stream = ExtResource("2_1thy8")
+volume_db = -5.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
