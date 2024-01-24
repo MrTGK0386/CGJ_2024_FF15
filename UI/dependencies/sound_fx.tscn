@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt4vqi05ai3jg"]
+
+[ext_resource type="AudioStream" uid="uid://rmsdocqk77fe" path="res://UI/assets/G_sound/menu_sound.mp3" id="1_bf5hm"]
+[ext_resource type="Script" path="res://UI/scripts/sound_fx.gd" id="1_e3c8u"]
+
+[node name="SoundFX" type="Node"]
+script = ExtResource("1_e3c8u")
+
+[node name="menusound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_bf5hm")
+volume_db = -35.0
