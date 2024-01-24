@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cghunse7pvblm"]
 
 [ext_resource type="PackedScene" uid="uid://h2ygpi0h6fcf" path="res://map.tscn" id="1_ufv6e"]
-[ext_resource type="PackedScene" uid="uid://cuwth6cvmahg6" path="res://player/player.tscn" id="2_8hj54"]
+[ext_resource type="PackedScene" uid="uid://cuwth6cvmahg6" path="res://playerFinal/player.tscn" id="2_8hj54"]
 [ext_resource type="PackedScene" uid="uid://bahav5fwi6tgd" path="res://projectile/laser_proj.tscn" id="2_lcpue"]
 [ext_resource type="PackedScene" uid="uid://cj0eapn2b2e3m" path="res://enemy/enemy.tscn" id="3_wn7nh"]
 [ext_resource type="PackedScene" uid="uid://hwq5ovxlselg" path="res://ennemy_spawner.tscn" id="5_5mrco"]
