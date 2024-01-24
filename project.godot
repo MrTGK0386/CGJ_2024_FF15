@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameScript="*res://game.gd"
+SoundFx="*res://UI/dependencies/sound_fx.tscn"
+MasterHSlider="*res://UI/dependencies/Master_h_slider.tscn"
+Menu="*res://UI/scenes/menu.tscn"
+InputSettings="*res://UI/input_settings/input_settings.tscn"
 
 [display]
 
