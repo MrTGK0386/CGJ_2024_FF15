@@ -1,24 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuwth6cvmahg6"]
+[gd_scene load_steps=10 format=3 uid="uid://cuwth6cvmahg6"]
 
-[ext_resource type="Texture2D" uid="uid://ca7ikb44oucdw" path="res://PPcompress.png" id="1_jovv7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_xmky4"]
+[ext_resource type="Texture2D" uid="uid://dun3rodgxumgq" path="res://player/FairyAnim1.png" id="3_ceect"]
+[ext_resource type="Texture2D" uid="uid://clrmm38qlvu1e" path="res://player/FairyAnim2.png" id="4_wfm4m"]
+[ext_resource type="Texture2D" uid="uid://d2gnnkhbvj8lj" path="res://player/FairyAnim3.png" id="5_nk8wt"]
+[ext_resource type="Texture2D" uid="uid://dhug8460rk82l" path="res://player/FairyAnim4.png" id="6_tohxn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18las"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ceect")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wfm4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nk8wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tohxn")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_wv7xu"]
+script/source = "extends AnimatedSprite2D
+
+@onready var _animated_sprite = %AnimatedSprite2D
+
+func _process(_delta):
+	if Input.is_action_pressed(\"ui_right\") or Input.is_action_pressed(\"ui_left\") or Input.is_action_pressed(\"ui_up\") or Input.is_action_pressed(\"ui_down\") :
+		_animated_sprite.play(\"flying\")
+	else:
+		_animated_sprite.stop()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v725"]
-size = Vector2(399, 398)
+size = Vector2(91, 105)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ikyv2"]
-radius = 1047.02
+radius = 720.117
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_xmky4")
 
-[node name="perso" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_jovv7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-1.99998, 0)
+scale = Vector2(5.455, 5.455)
+sprite_frames = SubResource("SpriteFrames_18las")
+animation = &"flying"
+frame_progress = 0.0245811
+script = SubResource("GDScript_wv7xu")
 
 [node name="hitbox_perso" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_7v725")
 
 [node name="cam_lock_perso" type="Camera2D" parent="."]
@@ -39,6 +79,7 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemyDetection"]
+position = Vector2(-5, 4)
 shape = SubResource("CircleShape2D_ikyv2")
 
 [connection signal="timeout" from="Attack/laser_proj_timer" to="." method="_on_laser_proj_timer_timeout"]
