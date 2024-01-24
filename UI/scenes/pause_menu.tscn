@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://chkp1vujedrs4"]
+
+[ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="1_3s6rt"]
+[ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="2_b3ef8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn635"]
+bg_color = Color(0.976471, 0.976471, 0.890196, 0.243137)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pn635")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Panel"]
+layout_mode = 2
+offset_top = 154.53
+offset_right = 1920.0
+offset_bottom = 1234.53
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_3s6rt")
+theme_override_font_sizes/font_size = 150
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel"]
+layout_mode = 2
+anchor_right = 0.3
+offset_left = -206.0
+offset_top = 17.0
+offset_right = 1196.0
+offset_bottom = 379.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_b3ef8")
+flat = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel"]
+layout_mode = 2
+anchor_right = 0.3
+offset_left = -206.0
+offset_top = 135.0
+offset_right = 1196.0
+offset_bottom = 497.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/Panel/VBoxContainer/Panel/HBoxContainer2"]
+layout_mode = 2
+icon = ExtResource("2_b3ef8")
+flat = true
