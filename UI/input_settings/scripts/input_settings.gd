@@ -8,7 +8,7 @@ var action_to_remap = null
 var remapping_button = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_create_action_list()
+		_create_action_list()
 
 func _create_action_list():
 	InputMap.load_from_project_settings()
