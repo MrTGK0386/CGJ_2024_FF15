@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs338jfj8vsi6"]
+[gd_scene load_steps=5 format=3 uid="uid://cuwth6cvmahg6"]
 
 [ext_resource type="Texture2D" uid="uid://ca7ikb44oucdw" path="res://PPcompress.png" id="1_jovv7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_xmky4"]
@@ -6,25 +6,42 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v725"]
 size = Vector2(399, 398)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ikyv2"]
+radius = 1047.02
+
 [node name="player" type="CharacterBody2D"]
-collision_mask = 3
+collision_layer = 3
 script = ExtResource("1_xmky4")
 
 [node name="perso" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_jovv7")
 
-[node name="tgk_gen_colider" type="Area2D" parent="."]
+[node name="hitbox_perso" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
-collision_layer = 2
-collision_mask = 0
-
-[node name="hitbox_perso" type="CollisionShape2D" parent="tgk_gen_colider"]
 shape = SubResource("RectangleShape2D_7v725")
 
 [node name="cam_lock_perso" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
-[connection signal="area_entered" from="tgk_gen_colider" to="." method="_on_tgk_gen_colider_area_entered"]
-[connection signal="area_exited" from="tgk_gen_colider" to="." method="_on_tgk_gen_colider_area_exited"]
+[node name="Attack" type="Node2D" parent="."]
+
+[node name="laser_proj_timer" type="Timer" parent="Attack"]
+wait_time = 1.5
+
+[node name="laser_proj_attack_timer" type="Timer" parent="Attack/laser_proj_timer"]
+wait_time = 0.075
+
+[node name="enemyDetection" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyDetection"]
+shape = SubResource("CircleShape2D_ikyv2")
+
+[connection signal="timeout" from="Attack/laser_proj_timer" to="." method="_on_laser_proj_timer_timeout"]
+[connection signal="timeout" from="Attack/laser_proj_timer/laser_proj_attack_timer" to="." method="_on_laser_proj_attack_timer_timeout"]
+[connection signal="body_entered" from="enemyDetection" to="." method="_on_enemy_detection_body_entered"]
+[connection signal="body_exited" from="enemyDetection" to="." method="_on_enemy_detection_body_exited"]
