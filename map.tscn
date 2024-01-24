@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://h2ygpi0h6fcf"]
 
-[ext_resource type="Texture2D" uid="uid://ym1ivgyf08kd" path="res://6000x6000-px-ART-artistic-artwork-fantasy-fi-futuristic-sci-science-space-1667035.jpg" id="1_kk5b4"]
+[ext_resource type="Texture2D" uid="uid://b3mb1ecoemgfh" path="res://MapFinal.png" id="1_iwwl4"]
 
 [sub_resource type="GDScript" id="GDScript_xheln"]
 script/source = "extends Node2D
@@ -27,7 +27,7 @@ script = SubResource("GDScript_xheln")
 [node name="MapSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-texture = ExtResource("1_kk5b4")
+texture = ExtResource("1_iwwl4")
 
 [node name="RectHaut" type="Area2D" parent="."]
 collision_layer = 2

@@ -54,7 +54,7 @@ position = Vector2(-1.99998, 0)
 scale = Vector2(5.455, 5.455)
 sprite_frames = SubResource("SpriteFrames_18las")
 animation = &"flying"
-frame_progress = 0.0245811
+frame_progress = 0.249896
 script = SubResource("GDScript_wv7xu")
 
 [node name="hitbox_perso" type="CollisionShape2D" parent="."]
