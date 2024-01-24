@@ -1,11 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://bci8ku2676asg"]
+[gd_scene load_steps=21 format=3 uid="uid://bci8ku2676asg"]
 
 [ext_resource type="Texture2D" uid="uid://bcww2ifww7gpj" path="res://UI/assets/logo/logo-pixidia.svg" id="1_cm8lf"]
 [ext_resource type="Script" path="res://UI/scripts/G_main.gd" id="1_dy2gd"]
 [ext_resource type="AudioStream" uid="uid://deixctpqw0nr" path="res://UI/assets/G_sound/selected_sound.mp3" id="2_1thy8"]
 [ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="2_sfun3"]
-[ext_resource type="Texture2D" uid="uid://cgblx1o3xfieq" path="res://UI/assets/buttons/btn-menu.svg" id="3_8vodp"]
-[ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="4_80rda"]
+[ext_resource type="Texture2D" uid="uid://42hrghcjcgum" path="res://UI/assets/buttons/jouer_final.svg" id="5_7mrwr"]
+[ext_resource type="Texture2D" uid="uid://wqs1ogcocpcd" path="res://UI/assets/buttons/paramtre_bouton.svg" id="6_w0p21"]
+[ext_resource type="Texture2D" uid="uid://cnbledue3p2p4" path="res://UI/assets/buttons/credits_bouton.svg" id="7_s6h45"]
+[ext_resource type="Texture2D" uid="uid://c2yidyqsosxqg" path="res://UI/assets/buttons/quitter_bouton.svg" id="8_tiuhy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gf8ek"]
 content_margin_left = 4.0
@@ -136,7 +138,7 @@ theme_override_font_sizes/font_size = 300
 theme_override_styles/hover = SubResource("StyleBoxEmpty_gf8ek")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_lpc70")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_11kcb")
-icon = ExtResource("3_8vodp")
+icon = ExtResource("5_7mrwr")
 flat = true
 clip_text = true
 
@@ -176,7 +178,7 @@ theme_override_font_sizes/font_size = 300
 theme_override_styles/hover = SubResource("StyleBoxEmpty_jgcd3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ag546")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lk87e")
-icon = ExtResource("4_80rda")
+icon = ExtResource("6_w0p21")
 flat = true
 clip_text = true
 
@@ -215,7 +217,7 @@ theme_override_font_sizes/font_size = 300
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dy1my")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_c86j8")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_82qwd")
-icon = ExtResource("4_80rda")
+icon = ExtResource("7_s6h45")
 flat = true
 clip_text = true
 
@@ -252,7 +254,7 @@ theme_override_font_sizes/font_size = 300
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dpc5o")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_jig4t")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_55rd6")
-icon = ExtResource("4_80rda")
+icon = ExtResource("8_tiuhy")
 flat = true
 clip_text = true
 

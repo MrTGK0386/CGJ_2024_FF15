@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://btw4rmbwjvpjf" path="res://UI/assets/G_fonts/IMMORTAL.ttf" id="1_7sgih"]
 [ext_resource type="Script" path="res://UI/scripts/settings.gd" id="1_64fng"]
-[ext_resource type="Texture2D" uid="uid://cgblx1o3xfieq" path="res://UI/assets/buttons/btn-menu.svg" id="2_5l5ro"]
-[ext_resource type="Texture2D" uid="uid://c2d0rk4h204t" path="res://UI/assets/buttons/btn-commandes.svg" id="5_a8g5r"]
+[ext_resource type="Texture2D" uid="uid://c2yidyqsosxqg" path="res://UI/assets/buttons/quitter_bouton.svg" id="3_1epxu"]
+[ext_resource type="Texture2D" uid="uid://wqs1ogcocpcd" path="res://UI/assets/buttons/paramtre_bouton.svg" id="4_yuthj"]
 [ext_resource type="PackedScene" uid="uid://c8xqpu5subu1k" path="res://UI/dependencies/Master_h_slider.tscn" id="6_bnlvt"]
 [ext_resource type="PackedScene" uid="uid://cbken2axcncdg" path="res://UI/dependencies/display_settings.tscn" id="7_2r2m8"]
 [ext_resource type="PackedScene" uid="uid://dnauthmjy2ihh" path="res://UI/input_settings/input_settings.tscn" id="8_prulx"]
@@ -81,7 +81,7 @@ theme_override_font_sizes/font_size = 300
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ogwm1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ydyvi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_du2j2")
-icon = ExtResource("2_5l5ro")
+icon = ExtResource("3_1epxu")
 flat = true
 clip_text = true
 
@@ -94,17 +94,16 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 680.0
+offset_left = 751.795
 offset_top = 80.0
-offset_right = 2074.0
+offset_right = 2145.79
 offset_bottom = 434.0
 scale = Vector2(0.4, 0.4)
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("5_a8g5r")
+texture = ExtResource("4_yuthj")
 
 [node name="Volume" type="VBoxContainer" parent="."]
 layout_mode = 0
