@@ -5,13 +5,18 @@
 [sub_resource type="GDScript" id="GDScript_xheln"]
 script/source = "extends Node2D
 
+var mapNumber = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GameScript.mapQueue.append(self)
+	mapNumber += 1
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+#func generateTerrain():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w8d8x"]
@@ -29,6 +34,15 @@ texture_filter = 1
 texture_repeat = 1
 texture = ExtResource("1_kk5b4")
 
+[node name="RectBas" type="Area2D" parent="."]
+position = Vector2(2730, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="rectBas" type="CollisionShape2D" parent="RectBas"]
+position = Vector2(-2730, 2730)
+shape = SubResource("RectangleShape2D_w8d8x")
+
 [node name="RectHaut" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 0
@@ -44,15 +58,6 @@ collision_mask = 0
 
 [node name="rectDroit" type="CollisionShape2D" parent="RectDroit"]
 shape = SubResource("RectangleShape2D_awolk")
-
-[node name="RectBas" type="Area2D" parent="."]
-position = Vector2(2730, 0)
-collision_layer = 2
-collision_mask = 0
-
-[node name="rectBas" type="CollisionShape2D" parent="RectBas"]
-position = Vector2(-2730, 2730)
-shape = SubResource("RectangleShape2D_w8d8x")
 
 [node name="RectGauche" type="Area2D" parent="."]
 collision_layer = 2

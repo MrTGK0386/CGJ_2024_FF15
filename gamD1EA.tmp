@@ -1,14 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cghunse7pvblm"]
+[gd_scene load_steps=4 format=3 uid="uid://cghunse7pvblm"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_pv5tf"]
 [ext_resource type="PackedScene" uid="uid://h2ygpi0h6fcf" path="res://map.tscn" id="1_ufv6e"]
-[ext_resource type="PackedScene" uid="uid://bs338jfj8vsi6" path="res://player/player.tscn" id="2_8hj54"]
+[ext_resource type="PackedScene" uid="uid://cuwth6cvmahg6" path="res://player/player.tscn" id="2_8hj54"]
 [ext_resource type="PackedScene" uid="uid://cj0eapn2b2e3m" path="res://enemy/enemy.tscn" id="3_wn7nh"]
 
 [node name="Game" type="Node"]
-script = ExtResource("1_pv5tf")
 
-[node name="Map0" parent="." instance=ExtResource("1_ufv6e")]
+[node name="Map" parent="." instance=ExtResource("1_ufv6e")]
 
 [node name="Interface" type="Control" parent="."]
 layout_mode = 3
