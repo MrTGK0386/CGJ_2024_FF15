@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj0eapn2b2e3m"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_q2gl4"]
-[ext_resource type="Texture2D" uid="uid://bs7qk0577k173" path="res://enemy/concombre.png" id="1_wj67b"]
+[ext_resource type="Texture2D" uid="uid://b0wfht05xqcgl" path="res://enemy/ghost-1.svg" id="2_qqm4q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x43m"]
-radius = 368.164
+radius = 859.47
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kxkm"]
 radius = 134.302
@@ -18,7 +18,7 @@ script = ExtResource("1_q2gl4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-206.561, 118.75)
 scale = Vector2(0.240421, 0.240421)
-texture = ExtResource("1_wj67b")
+texture = ExtResource("2_qqm4q")
 
 [node name="detection area" type="Area2D" parent="."]
 collision_layer = 2
